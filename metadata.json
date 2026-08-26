@@ -1,0 +1,6 @@
+{
+  "name": "RCPCH ePortfolio Staging & Progress+ Mirror",
+  "description": "Comprehensive staging, curriculum mapping, and export workspace for paediatric trainees matching the official RCPCH Progress+ and risr/advance (Kaizen) ePortfolio architecture.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
