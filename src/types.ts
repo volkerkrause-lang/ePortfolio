@@ -175,6 +175,41 @@ export interface ArcpChecklist {
   commentsForPanel: string;
 }
 
+export type AppraisalChecklistGroup = 'Courses & certificates' | 'Meetings & clinical learning' | 'Teaching & leadership' | 'Reading & case review';
+
+export interface AppraisalChecklistItem {
+  id: string;
+  title: string;
+  group: AppraisalChecklistGroup;
+  lookFor: string;
+  completed: boolean;
+  notes: string;
+}
+
+export interface AppraisalQualityProject {
+  id: string;
+  title: string;
+  period: 'Previous appraisal' | 'Next appraisal idea';
+  status: 'Completed' | 'In progress' | 'Idea';
+  summary: string;
+  nextStep: string;
+}
+
+export interface AppraisalFeedbackReminder {
+  id: string;
+  title: string;
+  lastCompleted?: string;
+  evidenceLocated: boolean;
+  notes: string;
+}
+
+export interface AppraisalPlannerState {
+  appraisalPeriod: string;
+  cpdChecklist: AppraisalChecklistItem[];
+  qualityProjects: AppraisalQualityProject[];
+  feedbackReminders: AppraisalFeedbackReminder[];
+}
+
 export interface FullPortfolioState {
   profile: TraineeProfile;
   wpbas: WPBARecord[];
@@ -184,6 +219,7 @@ export interface FullPortfolioState {
   supervisorMeetings: SupervisorMeeting[];
   certificates: MandatoryCertificate[];
   arcpChecklist: ArcpChecklist;
+  appraisalPlanner?: AppraisalPlannerState;
   lastUpdated: string;
 }
 

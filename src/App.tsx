@@ -11,6 +11,7 @@ import { ArcpModule } from './components/ArcpModule';
 import { SupervisorModule } from './components/SupervisorModule';
 import { KaizenExportHub } from './components/KaizenExportHub';
 import { ProfileModule } from './components/ProfileModule';
+import { AppraisalPlannerModule } from './components/AppraisalPlannerModule';
 import { GitHubSyncModal } from './components/GitHubSyncModal';
 import { AiAdvisorModal } from './components/AiAdvisorModal';
 import { loadPortfolioState, savePortfolioState } from './lib/storage';
@@ -126,6 +127,13 @@ export function App() {
 
           {activeTab === 'arcp' && (
             <ArcpModule
+              state={state}
+              onUpdateState={handleUpdateState}
+            />
+          )}
+
+          {activeTab === 'appraisal-planner' && (
+            <AppraisalPlannerModule
               state={state}
               onUpdateState={handleUpdateState}
             />

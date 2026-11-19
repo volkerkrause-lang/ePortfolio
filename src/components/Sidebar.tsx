@@ -24,6 +24,7 @@ export type NavigationTab =
   | 'pdp'
   | 'supervisors'
   | 'arcp'
+  | 'appraisal-planner'
   | 'kaizen'
   | 'github'
   | 'profile';
@@ -50,6 +51,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
     { id: 'pdp', label: 'Development Plans (PDP)', icon: Target, count: state.pdpGoals.length },
     { id: 'supervisors', label: 'Supervisory Meetings', icon: Users, count: state.supervisorMeetings.length },
     { id: 'arcp', label: 'ARCP Readiness & Certs', icon: CheckCircle2, count: state.certificates.length },
+    { id: 'appraisal-planner', label: 'Appraisal Planner', icon: BookOpen, count: state.appraisalPlanner?.cpdChecklist.filter(item => item.completed).length ?? 0 },
     { id: 'kaizen', label: 'Stage to Export (Kaizen)', icon: Copy },
     { id: 'github', label: 'GitHub Staging Mirror', icon: Github },
     { id: 'profile', label: 'Trainee Profile', icon: Settings }

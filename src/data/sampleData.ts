@@ -1,4 +1,5 @@
 import { FullPortfolioState } from '../types';
+import { createInitialAppraisalPlanner } from './appraisalPlanner';
 
 export const INITIAL_PORTFOLIO_STATE: FullPortfolioState = {
   profile: {
@@ -333,6 +334,7 @@ export const INITIAL_PORTFOLIO_STATE: FullPortfolioState = {
     timeOutOfTrainingDays: 2,
     commentsForPanel: 'On track to meet all ST2 Progress+ Level 1 competencies. Final QIP presentation scheduled for June departmental audit morning.'
   },
+  appraisalPlanner: createInitialAppraisalPlanner(),
   lastUpdated: new Date().toISOString()
 };
 
